@@ -1,3 +1,4 @@
+//gradlew 가 4.10.2버젼으로 빌드가 진행된다.
 buildscript {
     ext {
         springbootVersion = '2.1.7.RELEASE'
@@ -14,7 +15,7 @@ buildscript {
 plugins {
     id 'java'
     id 'eclipse'
-    id 'org.springframework.boot' version '2.1.7.RELEASE'
+    id 'org.springframework.boot' version '2.1.7.RELEASE'   //plugins사용방식이 조금 다르고 버젼을 명시해야한다.
     id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 }
 
@@ -27,5 +28,14 @@ repositories {
 
 dependencies {
     implementation('org.springframework.boot:spring-boot-starter-web')
+    implementation('org.projectlombok:lombok')
+    implementation('org.springframework.boot:spring-boot-starter-data-jpa')
+    implementation('com.h2database:h2')
+    implementation('org.springframework.boot:spring-boot-starter-mustache')
+    implementation('org.springframework.boot:spring-boot-starter-oauth2-client')
+    implementation('org.springframework.session:spring-session-jdbc')
+    implementation('org.mariadb.jdbc:mariadb-java-client')
+
     testCompile('org.springframework.boot:spring-boot-starter-test')
+    testCompile('org.springframework.security:spring-security-test')
 }
